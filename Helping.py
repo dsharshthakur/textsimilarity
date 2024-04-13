@@ -1,5 +1,6 @@
 # Step 1: importing necessary libraries
 import pandas as pd
+import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 import numpy as np
 from gensim.models import Word2Vec
