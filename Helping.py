@@ -13,9 +13,11 @@ dataset = pd.read_csv("DataNeuron_Text_Similarity.csv")
 
 # Step 3: creating corpus to train the word2vec
 training_text = dataset["text1"].str.cat(sep=" ") + dataset["text2"].str.cat(sep=" ")
+training_text = " ".join(filter(lambda item: item.isalnum(), training_text.split(" ")))
 
 # Step 2: sentence tokenization - required by Word2Vec
 tokenized_sentence = sent_tokenize(training_text.lower())
+
 
 # Step 5: word tokenization - required by Word2Vec
 
