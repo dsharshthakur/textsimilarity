@@ -5,7 +5,7 @@ import numpy as np
 from gensim.models import Word2Vec
 from sklearn.metrics.pairwise import cosine_similarity
 
-# nltk.download("punkt")
+nltk.download("punkt")
 
 # Step 2: read the text data set
 dataset = pd.read_csv("DataNeuron_Text_Similarity.csv")
