@@ -27,4 +27,4 @@ if btn:
         similarity = 0
 
     # display final output
-    st.success(similarity)
+    st.success({"similarity_score" :similarity})
