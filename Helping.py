@@ -15,7 +15,7 @@ dataset = pd.read_csv("DataNeuron_Text_Similarity.csv")
 training_text = dataset["text1"].str.cat(sep=" ") + dataset["text2"].str.cat(sep=" ")
 
 # Step 2: sentence tokenization - required by Word2Vec
-tokenized_sentence = sent_tokenize(training_text)
+tokenized_sentence = sent_tokenize(training_text.lower())
 
 # Step 5: word tokenization - required by Word2Vec
 
@@ -37,8 +37,8 @@ class TextSimilarity:
     def vectorization(self):
 
         # word tokenization of input texts received
-        tokens_a = self.txt_a.split(" ")
-        tokens_b = self.txt_b.split(" ")
+        tokens_a = [wrd.lower() for wrd in self.txt_a.split(" ") if wrd.isalpha()]
+        tokens_b = [wrd.lower() for wrd in self.txt_b.split(" ") if wrd.isalpha()]
 
         # storing sentence vector
         text_1_vector = []
